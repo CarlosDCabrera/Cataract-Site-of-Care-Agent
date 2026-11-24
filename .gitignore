@@ -1,0 +1,8 @@
+.venv/
+.env
+raw/*
+!raw/README.md
+cache/
+*.duckdb
+*.duckdb.wal
+.DS_Store

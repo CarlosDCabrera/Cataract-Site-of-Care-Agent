@@ -1,0 +1,8 @@
+npi,agent_version,category,notes,v2_fix_idea
+1285680769,v1-gemini-3.5-flash,missed_info_on_page,"Found Healthgrades/Doximity/Healthline pages but said no address; first query returned junk",Search with NPI; send text near the name; better first query
+1285680769,v1-gemini-3.5-flash,truncation_hid_info,"Healthline content beyond 8k cache cap; Healthgrades city at char 7098, past 6k prompt cut",Send text around name/NPI instead of first N chars
+1285680769,v1-gemini-3.5-flash,status_too_strict,"Doximity showed address at char 50; no practice name so model chose not_found",Add 'partial' status; allow address-only answers at medium confidence
+1215981022,v1-gemini-3.5-flash,search_noise_common_name,"Results dominated by other Kenneth Ellises on LinkedIn; queries 2-3 returned near-identical pages",Exclude LinkedIn/MapQuest; search with NPI
+1215981022,v1-gemini-3.5-flash,homepage_only,"Found islandeyephysicians.com homepage but not its doctors page",Let agent fetch a provider/doctors page from a promising practice site
+1215981022,v1-gemini-3.5-flash,search_noise_common_name,"3 LinkedIn profiles named Kenneth Ellis, correctly rejected as not the surgeon; MapQuest pages irrelevant",Exclude LinkedIn/MapQuest; search with NPI
+1215981022,v1-gemini-3.5-flash,homepage_only,"islandeyephysicians.com homepage only 670 chars, no mention of Ellis; likely JS-rendered or image-heavy",Fetch practice doctors page; test on JS-heavy sites
