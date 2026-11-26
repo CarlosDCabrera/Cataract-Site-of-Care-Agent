@@ -6,3 +6,6 @@ npi,agent_version,category,notes,v2_fix_idea
 1215981022,v1-gemini-3.5-flash,homepage_only,"Found islandeyephysicians.com homepage but not its doctors page",Let agent fetch a provider/doctors page from a promising practice site
 1215981022,v1-gemini-3.5-flash,search_noise_common_name,"3 LinkedIn profiles named Kenneth Ellis, correctly rejected as not the surgeon; MapQuest pages irrelevant",Exclude LinkedIn/MapQuest; search with NPI
 1215981022,v1-gemini-3.5-flash,homepage_only,"islandeyephysicians.com homepage only 670 chars, no mention of Ellis; likely JS-rendered or image-heavy",Fetch practice doctors page; test on JS-heavy sites
+1285680769,v1-claude-code-claude-haiku-5-5,trivial_quotes,"Verified quotes include 'Washington' and a nav link; 5/5 verified overstates evidence",Require quotes of 6+ words or score quote quality
+1285680769,v1-claude-code-claude-haiku-5-5,practice_listed_as_surgery_site,"Only surgery site is PCLI itself typed practice_or_clinic",Score only surgery_center/hospital; tighten prompt in v2
+1285680769,v1-claude-code-claude-haiku-5-5,next_query_is_instructions,"Query 2 was a multi-step instruction list, not a search",Constrain next_query to a short search query
